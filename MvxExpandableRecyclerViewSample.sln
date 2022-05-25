@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentPlanner.Core", "AppointmentPlanner.Core\AppointmentPlanner.Core.csproj", "{1602525F-23A6-40FC-8156-BB25E9D39271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentPlanner.Droid", "AppointmentPlanner.Droid\AppointmentPlanner.Droid.csproj", "{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1602525F-23A6-40FC-8156-BB25E9D39271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1602525F-23A6-40FC-8156-BB25E9D39271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1602525F-23A6-40FC-8156-BB25E9D39271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1602525F-23A6-40FC-8156-BB25E9D39271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322E1370-FEB6-475D-AA3C-1D9C78C5F6C1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9C65510-7DEE-4591-B399-D17CAA871613}
+	EndGlobalSection
+EndGlobal

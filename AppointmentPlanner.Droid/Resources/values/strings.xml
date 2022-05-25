@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">AppointmentPlanner.Droid</string>
+	<string name="action_settings">Settings</string>
+	<string name="appointment_template_selector">AppointmentPlanner.Droid.Components.AppointmentTemplateSelector, AppointmentPlanner.Droid</string>
+</resources>
