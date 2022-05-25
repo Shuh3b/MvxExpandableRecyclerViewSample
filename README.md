@@ -146,10 +146,10 @@ public class AppointmentTemplateSelector : MvxTemplateSelector<ITaskItem>
 	android:id="@+id/appointment_recyclerview"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	local:MvxTemplateSelector="Namespace.BirthdayTemplateSelector, Assembly.Name"
+	local:MvxTemplateSelector="AppointmentPlanner.Droid.Components.AppointmentTemplateSelector, AppointmentPlanner.Droid"
 	local:MvxBind="ItemsSource People;
-			ItemSwipeStart SwipeStartCommand;
-			ItemSwipeEnd SwipeEndCommand;"/>
+			ItemSwipeStart RemovePersonCommand;
+			ItemSwipeEnd UnplanPersonCommand;"/>
 ```
 
 __Important:__ MvxExpandableRecyclerView will require you to bind an `ObservableCollection<ITaskItem>` to `ItemsSource` and will need to have your custom `MvxTemplateSelector` for it to display your headers and items correctly.
@@ -162,6 +162,7 @@ To enable dragging and swiping features, we need to use `ItemTouchHelperCallback
 
 ```csharp
 MvxExpandableRecyclerView expandableRecyclerView = _view.FindViewById<MvxExpandableRecyclerView>(Resource.Id.appointment_recyclerview);
+// Attach our helper class to implement drag and swipe functionality.
 ItemTouchHelperCallback itemMoveCallback = new ItemTouchHelperCallback(expandableRecyclerView.Adapter);
 ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemMoveCallback);
 itemTouchHelper.AttachToRecyclerView(expandableRecyclerView);
