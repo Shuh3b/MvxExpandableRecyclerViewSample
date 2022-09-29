@@ -13,6 +13,7 @@ namespace AppointmentPlanner.Core.ViewModels
     public class AppointmentViewModel : MvxViewModel
     {
         private readonly IPeopleService peopleService;
+        private ITaskItem selectedPerson;
 
         public AppointmentViewModel(IPeopleService peopleService)
         {
@@ -24,7 +25,9 @@ namespace AppointmentPlanner.Core.ViewModels
             await base.Initialize();
 
             if (People == null)
+            {
                 People = new MvxObservableCollection<ITaskItem>();
+            }
 
             var people = peopleService.GetPeople();
             var peopleItems = people.Select(person => new PersonItem(person));
@@ -33,11 +36,30 @@ namespace AppointmentPlanner.Core.ViewModels
 
         public MvxObservableCollection<ITaskItem> People { get; private set; }
 
+        public ITaskItem SelectedPerson { get => selectedPerson; private set => SetSelectedPerson(value); }
+
         public IMvxCommand AddPersonCommand => new MvxCommand(AddPerson);
 
         public IMvxCommand<ITaskItem> RemovePersonCommand => new MvxCommand<ITaskItem>(RemovePerson);
 
         public IMvxCommand<ITaskItem> UnplanPersonCommand => new MvxCommand<ITaskItem>(UnplanPerson);
+
+        public IMvxCommand<ITaskItem> SelectPersonCommand => new MvxCommand<ITaskItem>(SelectPerson);
+
+        private void SetSelectedPerson(ITaskItem person)
+        {
+            if (selectedPerson != null)
+            {
+                selectedPerson.IsSelected = false;
+            }
+
+            if (person != null)
+            {
+                person.IsSelected = true;
+            }
+
+            selectedPerson = person;
+        }
 
         private void AddPerson()
         {
@@ -54,6 +76,11 @@ namespace AppointmentPlanner.Core.ViewModels
         private void UnplanPerson(ITaskItem person)
         {
             People.Update(person, DateTime.MinValue);
+        }
+
+        private void SelectPerson(ITaskItem person)
+        {
+            SelectedPerson = person;
         }
     }
 }

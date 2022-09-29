@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using AndroidX.RecyclerView.Widget;
 using AppointmentPlanner.Core.ViewModels;
 using AppointmentPlanner.Droid.Components;
 using MvvmCross.ExpandableRecyclerView.DroidX;
@@ -21,13 +20,9 @@ namespace AppointmentPlanner.Droid.Views
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.AppointmentView);
 
-            var expandableRecyclerView = _view.FindViewById<MvxExpandableRecyclerView>(Resource.Id.appointment_recyclerview);
+            MvxExpandableRecyclerView expandableRecyclerView = _view.FindViewById<MvxExpandableRecyclerView>(Resource.Id.appointment_recyclerview);
             // Attach our custom adapter.
             expandableRecyclerView.Adapter = new AppointmentRecyclerAdapter((IMvxAndroidBindingContext)BindingContext);
-            // Attach our helper class to implement drag and swipe functionality.
-            var itemMoveCallback = new ItemTouchHelperCallback(expandableRecyclerView.Adapter);
-            var itemTouchHelper = new ItemTouchHelper(itemMoveCallback);
-            itemTouchHelper.AttachToRecyclerView(expandableRecyclerView);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

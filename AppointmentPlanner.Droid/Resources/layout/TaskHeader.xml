@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8sp"
-    android:gravity="center">
+    android:gravity="center"
+    app:MvxBind="BackgroundColor If(IsSticky, NativeColor(StickyHeaderColour), NativeColor(DefaultColour));">
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">

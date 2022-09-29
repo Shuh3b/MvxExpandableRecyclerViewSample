@@ -12,7 +12,6 @@ namespace AppointmentPlanner.Droid
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
-        {
-        }
+        { }
     }
 }

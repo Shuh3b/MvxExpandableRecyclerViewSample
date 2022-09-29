@@ -10,12 +10,12 @@ namespace AppointmentPlanner.Core.Services
         /// <summary>
         /// Change to increase/decrease the number of people.
         /// </summary>
-        private int peopleCount = 200;
+        private readonly int peopleCount = 200;
 
         /// <summary>
-        /// Change the number passed to randomNumber.Next(x, y) to increase/decrease the number of potential headers.
+        /// Change the number passed to randomNumber.Next(x, potentialHeadersCount) to increase/decrease the number of potential headers.
         /// </summary>
-        private int potentialHeadersCount = 15;
+        private readonly int potentialHeadersCount = 20;
 
         private readonly IList<string> firstNames = new List<string>
         {
@@ -25,6 +25,7 @@ namespace AppointmentPlanner.Core.Services
             "Patricia", "Joseph", "Adam", "Brian", "Ernest", "Laura", "Samantha", "Christian", "Miranda", "Amanda", "Darren", "Sally", "Frederick", "Jacob", "Joel", "Bethany", "Mary", "Joshua", "Kevin", "Cynthia",
             "Adam", "Sharon", "Troy", "Jesse", "Brenda", "Olivia", "Nicholas", "Lisa", "Brian", "Robert", "Kimberly", "Sarah", "Randall", "Amy", "Michele", "Eric", "Stephanie", "Anna", "Richard", "Ashley",
         };
+
         private readonly IList<string> lastNames = new List<string>
         {
             "Barrett", "Huang", "Garcia", "Rivera", "Novak", "Roberts", "Odom", "House", "Barron", "Maldonado", "Ortega", "Anderson", "Parker", "Kelly", "Hicks", "Davis", "Johnson", "Ramirez", "Lee", "Olson",
@@ -38,11 +39,11 @@ namespace AppointmentPlanner.Core.Services
         {
             var people = new List<Person>();
 
-            // Change 
-            for (int i = 0; i < peopleCount; i++)
+            for (int i = 0; i <= peopleCount; i++)
             {
                 people.Add(GenerateRandomPerson());
             }
+
             return people;
         }
 
@@ -56,7 +57,7 @@ namespace AppointmentPlanner.Core.Services
             var randomNumber = new Random();
             var firstName = firstNames[randomNumber.Next(firstNames.Count)];
             var lastName = lastNames[randomNumber.Next(lastNames.Count)];
-            var appointment = DateTime.Today.AddDays(randomNumber.Next(0, potentialHeadersCount));
+            var appointment = DateTime.Today.AddDays(randomNumber.Next(potentialHeadersCount));
 
             return new Person(firstName, lastName, appointment);
         }
