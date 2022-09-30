@@ -109,7 +109,7 @@
       <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="MvxExpandableRecyclerView.DroidX">
-      <Version>3.0.1</Version>
+      <Version>3.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
