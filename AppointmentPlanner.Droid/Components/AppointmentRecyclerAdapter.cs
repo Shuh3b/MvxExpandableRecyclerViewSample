@@ -8,9 +8,6 @@ namespace AppointmentPlanner.Droid.Components
 {
     public class AppointmentRecyclerAdapter : MvxExpandableRecyclerAdapter<DateTime?>
     {
-        public AppointmentRecyclerAdapter()
-        { }
-
         public AppointmentRecyclerAdapter(IMvxAndroidBindingContext bindingContext) 
             : base(bindingContext)
         { }

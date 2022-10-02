@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:MvxBind="Text Format('{0} {1} - {2:d}', Model.FirstName, Model.LastName, Model.Appointment);"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4sp"
-        android:textColor="?android:attr/colorAccent"
-        app:MvxBind="Text Sequence;"/>
-</LinearLayout>
+    android:layout_height="wrap_content">
+    <include
+        layout="@layout/unplantaskitembackground"/>
+    <include
+        layout="@layout/deletetaskitembackground"/>
+    <FrameLayout
+        android:tag="swipe_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/appointment_recyclerview_item_background"
+            app:MvxBind="Selected IsSelected">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text Format('{0} {1} - {2:d}', Model.FirstName, Model.LastName, Model.Appointment);"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4sp"
+                android:textColor="?android:attr/colorAccent"
+                app:MvxBind="Text Sequence;"/>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

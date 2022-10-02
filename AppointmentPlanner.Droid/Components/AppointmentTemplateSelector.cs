@@ -17,10 +17,11 @@ namespace AppointmentPlanner.Droid.Components
 
         protected override int SelectItemViewType(ITaskItem forItemObject)
         {
-            if (forItemObject is ITaskHeader)
-                return 1;
-            else
-                return -1;
+            return forItemObject switch
+            {
+                ITaskHeader _ => 1,
+                _ => -1,
+            };
         }
     }
 }

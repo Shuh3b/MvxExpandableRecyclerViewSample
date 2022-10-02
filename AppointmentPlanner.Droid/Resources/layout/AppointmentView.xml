@@ -11,10 +11,10 @@
         app:MvxTemplateSelector="@string/appointment_template_selector"
         app:MvxBind="ItemsSource People;
                     ItemClick SelectPersonCommand;
-                    ItemSwipeRight UnplanPersonCommand;
-                    ItemSwipeLeft RemovePersonCommand;
+                    EnableDrag true;
                     EnableSwipe true;
-                    EnableDrag true;"/>
+                    ItemSwipeRight UnplanPersonCommand;
+                    ItemSwipeLeft RemovePersonCommand;"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
