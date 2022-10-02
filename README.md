@@ -1,4 +1,6 @@
-# Android MvxExpandableRecyclerView
+# Android MvxExpandableRecyclerViewSample
+
+This is a sample project that shows how to implement [`MvxExpandableRecyclerView`](https://github.com/Shuh3b/MvxExpandableRecyclerView).
 
 This is an unofficial package that contains an expandable AndroidX RecyclerView supported for MvvmCross. This view allows us to bind a collection of items (objects, ViewModels, etc) to the `ItemsSource` property. It works similarly to a RecyclerView. However, this comes with out-of-the-box functionality such as grouping items with collapsible/expandable headers. Additional functionality can be implemented such as dragging items up and down and swiping them by binding a `boolean` property to `EnableDrag` and `EnableSwipe` respectively.
 
